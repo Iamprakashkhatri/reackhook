@@ -10,8 +10,12 @@ import HookCounterOne from './components/7-use-effect-afterrender/HookCounterOne
 import ClassMouse from './components/9-run-effects-once/ClassMouse';
 import HookMouse from './components/9-run-effects-once/HookMouse';
 import MouseContainer from './components/9-run-effects-once/MouseContainer';
+import IntervalClassCounter from './components/11-use-effect-incorrectdep/IntervalClassCounter';
+import IntervalHookCounter from './components/11-use-effect-incorrectdep/IntervalHookCounter';
+import ComponentC from './components/ComponentC';
 
-
+export const UserContext = React.createContext()
+export const ChannelContext = React.createContext()
 
 function App() {
   return (
@@ -25,7 +29,14 @@ function App() {
       {/*<HookCounterOne />*/}
       {/*<ClassMouse />*/}
       {/*<HookMouse />*/}
-      <MouseContainer />
+      {/*<MouseContainer />*/}
+    {/*<IntervalClassConter />*/}
+      {/*<IntervalHookCounter />*/}
+      <UserContext.Provider value={'prakash'}>
+      <ChannelContext.Provider value={'codeevolution'}>
+      <ComponentC />
+      </ChannelContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 }
